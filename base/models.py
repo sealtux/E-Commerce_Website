@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-from django.db import models
-
-# Create your models here.
-class Room(models.Model):
-    name = models.CharField(max_length= 200)
-    description = models.TextField(null=True,blank= True)
-    updated = models.DateTimeField(auto_now=True)
-    created  = models.DateTimeField(auto_now = True)
-
-    def __str__(self):
-        return self.name
-=======
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -48,4 +35,3 @@ class Message(models.Model):
     created = models.DateTimeField(auto_now = True)
     def __str__(self):
         return self.body[0:50]          
->>>>>>> 7dc7f0b (Added a new admin feature)
