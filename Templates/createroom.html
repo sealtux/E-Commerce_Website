@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Room Page</title>
+</head>
+<body>
+
+{% if first_room %}
+    <h1>{{ first_room.name }}</h1>
+{% else %}
+    <h1>No rooms found</h1>
+{% endif %}
+
+</body>
+</html>
