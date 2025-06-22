@@ -14,7 +14,16 @@
 <h1>{{first_room.description}}</h1>
 <h1>{{ first_room.topic.name }} </h1>
 
+<h2>Create a Room</h2>
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="room_name" placeholder="Room Name" required><br>
+    <input type="text" name="topic" placeholder="Topic" required><br>
+    <button type="submit">Create Room</button>
+</form>
+
 </body>
+
 </html>
 
 
