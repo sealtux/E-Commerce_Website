@@ -22,6 +22,21 @@
     <button type="submit">Create Room</button>
 </form>
 
+
+
+<form method = "POST">
+    {% csrf_token %}
+    <input type = "text" name = "searchbutton" placeholder="Search..."><br>    
+    <button type = "Submit">Search</button>
+</form>
+
+
+{% if searching %}
+    <h1>{{searching.description}}</h1>
+{%else%}
+    <h1>Not found</h1>
+{% endif %}
+
 </body>
 
 </html>

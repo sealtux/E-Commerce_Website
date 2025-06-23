@@ -19,25 +19,46 @@ def room(request):
 
 
 def createRoom(request):
-    context = {}
+   
     first_room = Room.objects.first()  # Get the first room from the database
+    searching = None
 
     if request.method == 'POST':
         room_name = request.POST.get('room_name')
         topic_name = request.POST.get('topic')
+        searchquery = request.POST.get('searchbutton')
+        if searchquery:
+            try:
+                searching = Room.objects.get(name=searchquery)
+            
+            except Room.DoesNotExist:
+                searching = None
 
-        topic, created = Topic.objects.get_or_create(name=topic_name)
+        
 
 
-        Room.objects.create(
-                host=request.user,
-                topic=topic,
-                name=room_name
+        if room_name and topic_name:
+            try:
+                topic, created = Topic.objects.get_or_create(name=topic_name) #created is false if there is topic already exist
+
+
+                Room.objects.create(
+                    host=request.user,
+                    topic=topic,
+                    name=room_name
             )
-        return redirect('home')  
+            except Room.DoesNotExist:
+                first_room = None
+
+        
+        
 
     # This runs only for GET requests
-    return render(request, 'createroom.html', {'first_room': first_room})
+    return render(request, 'createroom.html', {'first_room': first_room,
+                                               'searching': searching})
+
+
+
 
 
 
