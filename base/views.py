@@ -9,8 +9,9 @@ def home(request):
     return render(request,'home.html')
 
 
-def room(request):
+def login(request):
     return render(request,'room.html')
+
 
 
 

@@ -1,0 +1,51 @@
+#p1{
+    color:rgb(94, 77, 205);
+    margin-left: 300px;  
+    margin-top: 50px;    
+    font-size:14;
+    font-family: "Times New Roman";
+}
+
+.login{
+
+
+background-color: rgb(240, 240, 240);
+
+
+
+height: 700px;
+width:500px;
+border-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+position: absolute;
+top:50%;
+left:50%;
+transform: translate(-50%, -50%);
+transition: all 10s;
+
+box-shadow:
+  -5px 0px 10px rgba(0, 0, 0, 0.1),   /* left */
+   0px -5px 10px rgba(0, 0, 0, 0.1),  /* top */
+   0px 5px 10px rgba(0, 0, 0, 0.1);   /* bottom */
+}
+
+.loginpic{
+background-color: rgb(193, 193, 193);
+
+height: 700px;
+width:500px;
+position: absolute;
+top:50%;
+left:76%;
+transform: translate(-50%, -50%);
+box-shadow:
+  -5px 0px 10px rgba(0, 0, 0, 0.1),   /* left */
+   0px -5px 10px rgba(0, 0, 0, 0.1),  /* top */
+   0px 5px 10px rgba(0, 0, 0, 0.1);   /* bottom */
+border-radius: 5px;
+border-top-left-radius: 0;
+border-bottom-left-radius: 0;
+
+
+}
