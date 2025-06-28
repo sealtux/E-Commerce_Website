@@ -15,14 +15,26 @@
           <h2 id = "p2">Please enter your details</h2>
           <h2 id = "p3">Email address</h2>
           <h2 id  = "p4">Password</h2>
+
+
+          <a href = "{% url 'forgot'%}">
+          <h2 id = "p5"> Forgot password</h2>
+          </a>
+
+
           <input type = 'text' class = "emailad" name ="email"></input>
-          <input type = 'text' class = "password" name = "password"></input>
+          <input type = 'password' class = "password" name = "password"></input>
+
+         <button type="submit" class="signin" name="signin">Sign in</button>
 
           <label class="custom-checkbox">
   <input type="checkbox">
   <span class="checkmark"></span>
   Remember me
 </label>
+
+
+
 
 
           <div class ="login-container">

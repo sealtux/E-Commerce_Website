@@ -42,6 +42,18 @@ position:absolute;
   font-family: 'Source Sans Pro';font-size:15px;
   font-weight: bold;
 }
+/*Forgot pass*/
+#p5{
+  position: absolute;
+  z-index:2;
+  margin-left: 985px;  
+  margin-top: 548px;  
+  font-family: 'Source Sans Pro';
+  font-size:12px;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #0a0a15;
+}
 
 .emailad{
 position: absolute;
@@ -180,4 +192,21 @@ border-top-left-radius: 0;
 border-bottom-left-radius: 0;
 
 
+}
+
+.signin{
+  position: absolute;
+  margin-left: 816px;  
+  margin-top: 590px; 
+  width: 255px;
+  height: 40px;
+  z-index:2;
+  background-color: rgb(24, 69, 159);
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+
+}
+.signin:active {
+   background-color: rgb(19, 57, 133);
 }

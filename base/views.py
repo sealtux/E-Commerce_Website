@@ -12,6 +12,8 @@ def home(request):
 def login(request):
     return render(request,'room.html')
 
+def forgot(request):
+    return render(request,'forgot.html')
 
 
 
