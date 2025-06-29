@@ -21,18 +21,20 @@
           <h2 id = "p5"> Forgot password</h2>
           </a>
 
-
+          <form method="POST" action="{% url 'log_in' %}">
+          {% csrf_token %}
           <input type = 'text' class = "emailad" name ="email"></input>
           <input type = 'password' class = "password" name = "password"></input>
-
          <button type="submit" class="signin" name="signin">Sign in</button>
+         </form>
+
 
           <label class="custom-checkbox">
   <input type="checkbox">
   <span class="checkmark"></span>
   Remember me
 </label>
-
+  
 
 
 

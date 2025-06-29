@@ -1,7 +1,9 @@
 from django.shortcuts import render,redirect
-from .models import Room #this gets the the room mode 
-from .models import Topic
+from .models import partic #this gets the the room mode 
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.hashers import check_password
 from django.contrib.auth.decorators import login_required
+
 
 
 # Create your views here.
@@ -9,8 +11,29 @@ def home(request):
     return render(request,'home.html')
 
 
-def login(request):
-    return render(request,'room.html')
+def login_views(request):
+    if request.method =="POST":
+        username = request.POST.get('email')
+        password = request.POST.get('password')
+        try:
+            user = partic.objects.get(name=username)
+
+            if user.password == password and user.name == username:
+                return redirect('/') 
+            
+            else:
+                return render(request, "room.html",{"error":"invalid password"})
+        
+        except partic.DoesNotExist:
+        
+            return render(request, "room.html", {"error": "User not found"})
+    
+    return render(request,"room.html")
+        
+
+
+
+
 
 def forgot(request):
     return render(request,'forgot.html')
@@ -20,6 +43,11 @@ def forgot(request):
 
 
 
+
+
+
+
+'''
 
 def createRoom(request):
    
@@ -64,5 +92,5 @@ def createRoom(request):
 
 
 
-
+'''
 
