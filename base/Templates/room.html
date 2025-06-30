@@ -21,12 +21,35 @@
           <h2 id = "p5"> Forgot password</h2>
           </a>
 
+          <div class="continue_with">
+          <hr style="
+            width: 4.4%;
+            border: .1px solid rgb(130, 128, 128);
+            margin-left: 985px;
+            margin-top:646px;
+            position: absolute;
+            z-index: 10;
+          ">
+          <hr style="
+            width: 4.2%;
+            border: .05px solid rgb(130, 128, 128);
+            margin-left: 816px;
+            margin-top:646px;
+            position: absolute;
+            z-index: 10;
+          ">
+          <h2 id = 'continue'> or continue with</h2>
+          </div>
+
           <form method="POST" action="{% url 'log_in' %}">
           {% csrf_token %}
           <input type = 'text' class = "emailad" name ="email"></input>
           <input type = 'password' class = "password" name = "password"></input>
          <button type="submit" class="signin" name="signin">Sign in</button>
          </form>
+
+         
+         
 
 
           <label class="custom-checkbox">

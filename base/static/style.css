@@ -210,3 +210,14 @@ border-bottom-left-radius: 0;
 .signin:active {
    background-color: rgb(19, 57, 133);
 }
+
+
+#continue{
+  position: absolute;
+  width: 170px;
+  
+  font-size:12px;
+  margin-left: 900px;  
+  margin-top: 640px; 
+  z-index: 2;
+}
