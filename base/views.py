@@ -5,11 +5,14 @@ from django.contrib.auth.hashers import check_password
 from django.contrib.auth.decorators import login_required
 
 
-
+hello = {}
 # Create your views here.
 def home(request):
     return render(request,'home.html')
 
+
+def shop(request):
+    return render(request,'Shop.html')
 
 def login_views(request):
     if request.method =="POST":
@@ -19,7 +22,7 @@ def login_views(request):
             user = partic.objects.get(name=username)
 
             if user.password == password and user.name == username:
-                return redirect('/') 
+                return redirect('shop') 
             
             else:
                 return render(request, "room.html",{"error":"invalid password"})

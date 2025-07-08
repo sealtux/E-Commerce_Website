@@ -1,0 +1,36 @@
+/*first layer*/
+.layer1{
+    background-color: rgb(26, 25, 38);
+    text-decoration: underline;
+    height: 80px;
+    width:1898px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    
+}
+.layer2{
+    background-color: rgb(26, 25, 38);
+    text-decoration: underline;
+    height: 1000px;
+    width:1898px;
+    position: absolute;
+    top: 73px;
+    left: 0px;
+    border-top: 1.2px solid rgb(57, 62, 60); 
+}
+
+.notice{
+    background-color: rgb(33, 33, 69);
+    position: absolute;
+    height:90px;
+    width:1871px;
+    top:98px;
+    left:13px;
+    border-radius:8px;
+    border:2px solid rgb(38, 38, 59);
+}
+
+.panel{
+    background-color:  rgb(44, 43, 59);
+}
