@@ -3,34 +3,45 @@
     background-color: rgb(26, 25, 38);
     text-decoration: underline;
     height: 80px;
-    width:1898px;
+    width:1900px;
     position: absolute;
     top: 0px;
     left: 0px;
+
     
 }
 .layer2{
     background-color: rgb(26, 25, 38);
     text-decoration: underline;
     height: 1000px;
-    width:1898px;
+    width:1900px;
     position: absolute;
     top: 73px;
     left: 0px;
     border-top: 1.2px solid rgb(57, 62, 60); 
+    z-index: 1;
 }
 
 .notice{
     background-color: rgb(33, 33, 69);
-    position: absolute;
-    height:90px;
+    position: relative;
+    height:80px;
     width:1871px;
     top:98px;
-    left:13px;
+    left:7px;
     border-radius:8px;
     border:2px solid rgb(38, 38, 59);
+    z-index: 2;
 }
 
 .panel{
-    background-color:  rgb(44, 43, 59);
+    background-color: rgb(37, 34, 60);
+    position: relative;
+    width:1871px;
+    height:110px;
+    top:120px;
+    left:10px;
+    border-radius:8px;
+    border: 1.5px solid rgb(52, 52, 69);
+    z-index: 3;
 }

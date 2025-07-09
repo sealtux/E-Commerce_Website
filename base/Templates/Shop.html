@@ -23,8 +23,18 @@
         </div>
 
         <div class = 'panel'>
+            <form method = "POST">
+                {% csrf_token %}
+                <input type = 'text' class = search name = searching></input>
+
+            </form>
+
+            
             <!--panel content here-->
+
         </div>
+
+        
     </body>
 
 </html>
