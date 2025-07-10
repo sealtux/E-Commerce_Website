@@ -45,3 +45,13 @@
     border: 1.5px solid rgb(52, 52, 69);
     z-index: 3;
 }
+.search{
+    position: absolute;
+    width: 350;
+    height: 50;
+    top:20 ;
+    left: 50;
+    
+    background-color: rgb(26, 25, 38);
+    border: 1px solid white;
+}
