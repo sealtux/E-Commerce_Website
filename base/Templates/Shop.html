@@ -25,6 +25,7 @@
         <div class = 'panel'>
             <form method = "POST">
                 {% csrf_token %}
+                <img src="{% static 'images/search.png' %}" class="search-icon">
                 <input type = 'text' class = search name = searching></input>
 
             </form>
