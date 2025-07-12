@@ -1,3 +1,4 @@
+import time
 from django.shortcuts import render,redirect
 from .models import partic #this gets the the room mode 
 from django.contrib.auth import authenticate, login
@@ -8,13 +9,16 @@ from django.contrib.auth.decorators import login_required
 hello = {}
 # Create your views here.
 def home(request):
+    time.sleep(2)
     return render(request,'home.html')
 
 
 def shop(request):
+    time.sleep(2)
     return render(request,'Shop.html')
 
 def login_views(request):
+    time.sleep(2) 
     if request.method =="POST":
         username = request.POST.get('email')
         password = request.POST.get('password')
@@ -39,6 +43,7 @@ def login_views(request):
 
 
 def forgot(request):
+    time.sleep(2)
     return render(request,'forgot.html')
 
 

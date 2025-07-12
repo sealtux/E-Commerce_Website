@@ -41,7 +41,7 @@
           <h2 id = 'continue'> or continue with</h2>
           </div>
 
-          <form method="POST" action="{% url 'log_in' %}">
+          <form id = "loginform" method="POST" action="{% url 'log_in' %}">
           {% csrf_token %}
           <input type = 'text' class = "emailad" name ="email"></input>
           <input type = 'password' class = "password" name = "password"></input>
@@ -71,10 +71,12 @@
           </div>
           
           <script> 
-          const loginbox = document.querySelector('.login');
           
+
           
             
+          
+          
            
 
           </script><!-- You need this for you to link your style sheet-->

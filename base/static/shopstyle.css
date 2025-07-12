@@ -46,30 +46,26 @@
     z-index: 3;
 }
 
-
+/*Design for search*/
 .search{
     position: absolute;
     width: 320;
     height: 45;
     top:32 ;
     left: 35;
-    
     background-color: rgb(26, 25, 38);
     border-radius: 7px;
     border: 1.5px solid rgb(52, 52, 69);
     color: rgb(214, 210, 210);
     padding-left: 40px;
-    
 }
 
-
-
-
 .search:focus {
-  box-shadow: 0 0 10px 2px rgba(150, 150, 255, 0.15); /* soft blue glow */
+  box-shadow: 0 0 10px 2px rgba(150, 150, 255, 0.15); 
   outline: none;
   transition: box-shadow 0.1s ease;
 }
+
 .search-icon {
     width: 18px;
     height: 18px;
@@ -78,8 +74,122 @@
     top:46px;
     z-index: 3;
 }
+
 .search:hover{
-    
     box-shadow: 0 0 1px 1px  rgb(108, 108, 108);
+}
+
+.buttonlay{
+    background-color: rgb(26, 25, 38);
+    position: absolute;
+    height: 55;
+    width: 275;
+    top:27 ;
+    left: 370;
+    z-index: 3;
+    border-radius: 8px;
+    border: 1.5px solid rgb(52, 52, 69);
+}
+
+.all{
+
+    position: absolute;
+    height: 45;
+    width: 50;
+    top:5 ;
+    left: 5;
+    border-radius: 8px;
+    background-color: rgb(26, 25, 38); 
+    border: rgb(26, 25, 38); 
+    color:#6D6B6B;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15;
     
 }
+
+.all:hover{
+    background-color: rgb(52, 51, 69); 
+    color:#d9d6d6
+    
+}
+
+.all:focus{
+    background-color: rgb(38, 36, 79); 
+    border: 1.5px solid rgb(62, 61, 115); 
+    color:#fffcfc
+
+}
+
+.Crops{
+    position: absolute;
+    height: 45;
+    width: 70;
+    top:5 ;
+    left: 55;
+    border-radius: 8px;
+    background-color: rgb(26, 25, 38); 
+    border: rgb(26, 25, 38); 
+    color:#6D6B6B;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15;
+}
+
+.Crops:hover{
+    background-color: rgb(52, 51, 69); 
+    color:#d9d6d6
+}
+
+.Crops:focus{
+    background-color: rgb(38, 36, 79); 
+    border: 1.5px solid rgb(62, 61, 115); 
+    color:#fffcfc
+}
+
+.Pets{
+    position: absolute;
+    height: 45;
+    width: 60;
+    top:5 ;
+    left: 125;
+    border-radius: 8px;
+    background-color: rgb(26, 25, 38); 
+    border: rgb(26, 25, 38); 
+    color:#6D6B6B;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15;
+}
+
+.Pets:hover{
+    background-color: rgb(52, 51, 69); 
+    color:#d9d6d6
+}
+
+.Pets:focus{
+    background-color: rgb(38, 36, 79); 
+    border: 1.5px solid rgb(62, 61, 115); 
+    color:#fffcfc
+}
+.Bundles{
+    position: absolute;
+    height: 45;
+    width: 85;
+    top:5 ;
+    left: 185;
+    border-radius: 8px;
+    background-color: rgb(26, 25, 38); 
+    border: rgb(26, 25, 38); 
+    color:#6D6B6B;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15;
+}
+.Bundles:hover{
+    background-color: rgb(52, 51, 69); 
+    color:#d9d6d6
+}
+
+.Bundles:focus{
+    background-color: rgb(38, 36, 79); 
+    border: 1.5px solid rgb(62, 61, 115); 
+    color:#fffcfc
+}
+
