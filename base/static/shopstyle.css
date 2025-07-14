@@ -49,10 +49,10 @@
 /*Design for search*/
 .search{
     position: absolute;
-    width: 320;
-    height: 45;
-    top:32 ;
-    left: 35;
+    width: 320px;
+    height: 45px;
+    top:32px ;
+    left: 35px;
     background-color: rgb(26, 25, 38);
     border-radius: 7px;
     border: 1.5px solid rgb(52, 52, 69);
@@ -82,10 +82,10 @@
 .buttonlay{
     background-color: rgb(26, 25, 38);
     position: absolute;
-    height: 55;
-    width: 275;
-    top:27 ;
-    left: 370;
+    height: 55px;
+    width: 275px;
+    top:27px ;
+    left: 370px;
     z-index: 3;
     border-radius: 8px;
     border: 1.5px solid rgb(52, 52, 69);
@@ -94,10 +94,10 @@
 .all{
 
     position: absolute;
-    height: 45;
-    width: 50;
-    top:5 ;
-    left: 5;
+    height: 45px;
+    width: 50px;
+    top:5px ;
+    left: 5px;
     border-radius: 8px;
     background-color: rgb(26, 25, 38); 
     border: rgb(26, 25, 38); 
@@ -122,10 +122,10 @@
 
 .Crops{
     position: absolute;
-    height: 45;
-    width: 70;
-    top:5 ;
-    left: 55;
+    height: 45px;
+    width: 70px;
+    top:5px ;
+    left: 55px;
     border-radius: 8px;
     background-color: rgb(26, 25, 38); 
     border: rgb(26, 25, 38); 
@@ -147,10 +147,10 @@
 
 .Pets{
     position: absolute;
-    height: 45;
-    width: 60;
-    top:5 ;
-    left: 125;
+    height: 45px;
+    width: 60px;
+    top:5px ;
+    left: 125px;
     border-radius: 8px;
     background-color: rgb(26, 25, 38); 
     border: rgb(26, 25, 38); 
@@ -171,10 +171,10 @@
 }
 .Bundles{
     position: absolute;
-    height: 45;
-    width: 85;
-    top:5 ;
-    left: 185;
+    height: 45px;
+    width: 85px;
+    top:5px;
+    left: 185px;
     border-radius: 8px;
     background-color: rgb(26, 25, 38); 
     border: rgb(26, 25, 38); 
@@ -193,3 +193,52 @@
     color:#fffcfc
 }
 
+
+.filter {
+  position: absolute;
+  top: 38px;
+  left: 1400px;
+  
+  
+  font-size: 15px;
+  color: #6D6B6B;
+  font-family: 'Poppins', sans-serif;
+}
+
+.dropdown-wrapper {
+  position: relative;
+}
+.custom-dropdown {
+  position: absolute;
+  top: 38px;
+  left: 1468px;
+  width: 200px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #a8a7a7;
+  background-color: rgb(26, 25, 38);
+  border: 1.5px solid rgb(52, 52, 69);
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.selected {
+  padding: 10px;
+}
+
+.dropdown-options {
+  display: none;
+  background-color: rgb(26, 25, 38);
+  border-top: 1.5px solid rgb(52, 52, 69);
+  border-radius: 0 0 6px 6px;
+}
+
+.dropdown-options div {
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.dropdown-options div:hover {
+  background-color: rgb(40, 39, 55);
+}

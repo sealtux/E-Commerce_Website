@@ -26,6 +26,7 @@
             <form method = "POST">
                 {% csrf_token %}
                 <img src="{% static 'images/search.png' %}" class="search-icon">
+
                 <input type = 'text' class = search name = searching></input>
 
                 <!-- for button layer-->
@@ -38,15 +39,48 @@
                     <button class = "Crops">Crops</button>
                     <button class = "Pets">Pets</button>
                     <button class = "Bundles">Bundles</button>
-                </div>
+
+                    </div>
+               
+
+            <div class="combo">
+        <h1 class="filter">Sort by:</h1>
+        <div class="custom-dropdown" onclick="toggleDropdown(this)">
+            <div class="selected">All</div>
+            <div class="dropdown-options">
+            <div data-value="">All</div>
+            <div data-value="1st">A to Z</div>
+            <div data-value="2nd">Price: Low - High</div>
+            <div data-value="3rd">Price: High - Low</div>
+            </div>
+        </div>
+        </div>
             
-            
+             
 
             <!--panel content here-->
         </div>
 
-        <!--button layer-->
+
         
+
+        <!--for javascript-->
+        <script>
+function toggleDropdown(dropdown) {
+  const options = dropdown.querySelector(".dropdown-options");
+  options.style.display = options.style.display === "block" ? "none" : "block";
+}
+
+document.querySelectorAll(".dropdown-options div").forEach(option => {
+  option.addEventListener("click", function () {
+    const dropdown = this.closest(".custom-dropdown");
+    dropdown.querySelector(".selected").textContent = this.textContent;
+    console.log("Selected value:", this.dataset.value); // for handling
+    dropdown.querySelector(".dropdown-options").style.display = "none";
+  });
+});
+
+</script>
 
     </body>
 
