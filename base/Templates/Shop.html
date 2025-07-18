@@ -22,30 +22,45 @@
 
         </div>
 
-        <div class = 'panel'>
-            <form method = "POST">
-                {% csrf_token %}
-                <img src="{% static 'images/search.png' %}" class="search-icon">
-
-                <input type = 'text' class = search name = searching></input>
-
-                <!-- for button layer-->
-                
-
-            </form>
         
-            <div class = "buttonlay">
-                    <button class = "all" >All</button>
-                    <button class = "Crops">Crops</button>
-                    <button class = "Pets">Pets</button>
-                    <button class = "Bundles">Bundles</button>
+            
+            
 
-                    </div>
-               
+    <div class = 'panel'>
+                    <form method = "POST">
+                        {% csrf_token %}
+                        <img src="{% static 'images/search.png' %}" class="search-icon">
 
-            <div class="combo">
+                        <img src="{% static 'images/filter.png' %}" class="filterlogo">
+
+                        <input type = 'text' class = search name = searching></input>
+
+                        <!-- for button layer-->
+                        
+
+                    </form>
+                
+                    <div class = "buttonlay">
+                            <button class = "all" >All</button>
+                            <button class = "Crops">Crops</button>
+                            <button class = "Pets">Pets</button>
+                            <button class = "Bundles">Bundles</button>
+
+                            </div>
+                    
+
+                <div class="combo">
         <h1 class="filter">Sort by:</h1>
-        <div class="custom-dropdown" onclick="toggleDropdown(this)">
+        
+
+
+    <div 
+            class="custom-dropdown" 
+            tabindex="0" 
+            role="button" 
+            onclick="toggleDropdown(this)" 
+            onkeydown="if(event.key==='Enter' || event.key===' '){ this.click(); }"
+        >
             <div class="selected">All</div>
             <div class="dropdown-options">
             <div data-value="">All</div>
@@ -55,29 +70,63 @@
             </div>
         </div>
         </div>
-            
+
+        <div class = "order1" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)" > 
+            </div>
+        <div class = "order2"  onmouseenter="popUp2(this)" onmouseleave="popDown2(this)" > 
+        
+        </div>
+
+
+    </div>      
              
 
             <!--panel content here-->
-        </div>
+        
 
 
         
 
         <!--for javascript-->
         <script>
+
+        function popUp1(element) {
+        element.style.transform = "scaleY(1.01)";
+        element.style.transition = "transform 0.2s ease";
+        }
+
+        function popDown1(element) {
+        element.style.transform = "scale(1)";
+}
+        function popUp2(element) {
+        element.style.transform = "scaleY(1.01)";
+        element.style.transition = "transform 0.2s ease";
+        }
+
+        function popDown2(element) {
+        element.style.transform = "scale(1)";
+}
+        
 function toggleDropdown(dropdown) {
   const options = dropdown.querySelector(".dropdown-options");
   options.style.display = options.style.display === "block" ? "none" : "block";
 }
 
-document.querySelectorAll(".dropdown-options div").forEach(option => {
-  option.addEventListener("click", function () {
-    const dropdown = this.closest(".custom-dropdown");
-    dropdown.querySelector(".selected").textContent = this.textContent;
-    console.log("Selected value:", this.dataset.value); // for handling
-    dropdown.querySelector(".dropdown-options").style.display = "none";
+document.querySelectorAll(".dropdown-options div").forEach(option => { //this loops through all the option items 
+  option.addEventListener("click", function () {                        //so this lines here adds a click event listener
+    const dropdown = this.closest(".custom-dropdown");                  // finds parent 
+    dropdown.querySelector(".selected").textContent = this.textContent; //finds the selected box and sets the upper box
+    console.log("Selected value:", this.dataset.value); // this just outputs to the console
+    dropdown.querySelector(".dropdown-options").style.display = "none";// hides the dropdown list after an option is clicked
   });
+});
+//this for closing whenever you click outside of the dropbox
+document.addEventListener("click",function(event){
+    document.querySelectorAll(".custom-dropdown").forEach(dropdown=>{
+        if(!dropdown.contains(event.target)){
+            dropdown.querySelector(".dropdown-options").style.display = "none";
+        }
+    });
 });
 
 </script>
