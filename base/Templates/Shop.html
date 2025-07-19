@@ -72,10 +72,20 @@
         </div>
 
         <div class = "order1" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)" > 
-            </div>
-        <div class = "order2"  onmouseenter="popUp2(this)" onmouseleave="popDown2(this)" > 
-        
         </div>
+        <div class = "order2"  onmouseenter="popUp1(this)" onmouseleave="popDown1(this)" >
+        </div>
+        <div class = "order3" onmouseenter="popUp1(this)" onmouseleave = "popDown1(this)">
+        </div>
+        <div class = "order4" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)">
+        </div>
+        <div class = "order5" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)">
+        </div>
+        <div class = "order6" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)">
+        </div>
+        
+        
+
 
 
     </div>      
@@ -89,7 +99,40 @@
 
         <!--for javascript-->
         <script>
+            
+             document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".buttonlay button");
 
+    buttons.forEach(button => {
+      button.addEventListener("click", function () {
+        // Remove active class from all
+        buttons.forEach(b => b.classList.remove("active"));
+        // Add active to clicked one
+        this.classList.add("active");
+      });
+    });
+
+    // Set "All" as active by default
+    document.querySelector(".buttonlay .all").classList.add("active");
+  });
+
+
+            //this is for to set the all button as a default 
+            document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".buttonlay button");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", function () {
+      buttons.forEach(b => b.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+
+  // set All as default active
+  document.querySelector(".buttonlay .all").classList.add("active");
+});
+
+        //this for the effect when hovering an order
         function popUp1(element) {
         element.style.transform = "scaleY(1.01)";
         element.style.transition = "transform 0.2s ease";
@@ -98,15 +141,9 @@
         function popDown1(element) {
         element.style.transform = "scale(1)";
 }
-        function popUp2(element) {
-        element.style.transform = "scaleY(1.01)";
-        element.style.transition = "transform 0.2s ease";
-        }
+      
 
-        function popDown2(element) {
-        element.style.transform = "scale(1)";
-}
-        
+
 function toggleDropdown(dropdown) {
   const options = dropdown.querySelector(".dropdown-options");
   options.style.display = options.style.display === "block" ? "none" : "block";

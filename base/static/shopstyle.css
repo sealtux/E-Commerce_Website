@@ -100,6 +100,14 @@
     border: 1.5px solid rgb(52, 52, 69);
 }
 
+.buttonlay button.active {
+    /*This is for all buttons of the buttonlay div*/
+    background-color: rgb(37, 34, 60);
+    color: white;
+    border: 1.5px solid rgb(62, 61, 115); 
+}
+
+
 .all{
 
     position: absolute;
@@ -128,6 +136,8 @@
     color:#fffcfc
 
 }
+
+
 
 .Crops{
     position: absolute;
@@ -275,8 +285,8 @@
 .order1{
     background-color: rgb(37, 34, 60);
     border-radius: 9px;
-    width: 250px;
-    height: 350px;
+    width:295px;
+    height: 420px;
     top: 130px;
     left: 0px;
     position: absolute;
@@ -285,10 +295,47 @@
 .order2{
     background-color: rgb(37, 34, 60);
     border-radius: 9px;
-    width: 250px;
-    height: 350px;
+    width:295px;
+    height: 420px;
     top: 130px;
-    left: 270px;
+    left: 315px;
     position: absolute;
     
 }
+.order3{
+    background-color: rgb(37, 34, 60);
+    border-radius: 9px;
+    width:295px;
+    height: 420px;
+    top: 130px;
+    left: 630px;
+    position: absolute;
+}
+.order4{
+    background-color: rgb(37, 34, 60);
+    border-radius: 9px;
+    width:295px;
+    height: 420px;
+    top: 130px;
+    left: 945px;
+    position: absolute;
+}
+.order5{
+    background-color: rgb(37, 34, 60);
+    border-radius: 9px;
+    width:295px;
+    height: 420px;
+    top: 130px;
+    left: 1260px;
+    position: absolute;
+}
+.order6{
+    background-color: rgb(37, 34, 60);
+    border-radius: 9px;
+    width:295px;
+    height: 420px;
+    top: 130px;
+    left: 1575px;
+    position: absolute;
+}
+
