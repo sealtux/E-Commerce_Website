@@ -1,24 +1,33 @@
 /*first layer*/
 .layer1{
-    background-color: rgb(26, 25, 38);
+    background-color: rgb(18, 18, 18);
     text-decoration: underline;
     height: 80px;
-    width:1905px;
-    position: absolute;
+    width:99.2vw; /* Use % instead of fixed px width */
+    position: fixed;
     top: 0px;
     left: 0px;
-
+    z-index: 6;
+    border-bottom: 1px solid rgb(57, 62, 60); ;
     
 }
+.layer1sec{
+    height: 25px;
+     width: 100%; /* Use % instead of fixed px width */
+     position: fixed;
+     background-color: rgb(18, 18, 18);
+     top: 81px;
+     z-index: 6;
+}
 .layer2{
-    background-color: rgb(26, 25, 38);
+    background-color: rgb(18, 18, 18);
     text-decoration: underline;
-    height: 1000px;
-    width:1905px;
+    height: 2000px;
+    width:99.2vw;
     position: absolute;
     top: 73px;
     left: 0px;
-    border-top: 1.2px solid rgb(57, 62, 60); 
+    
     z-index: 1;
 }
 
@@ -35,9 +44,9 @@
 }
 
 .panel{
-    background-color: rgb(37, 34, 60);
+    background-color: rgb(29, 28, 38);
     position: relative;
-    width:1871px;
+    width:97.4svw;
     height:110px;
     top:120px;
     left:7px;
@@ -53,7 +62,7 @@
     height: 45px;
     top:32px ;
     left: 35px;
-    background-color: rgb(26, 25, 38);
+    background-color: rgb(18, 18, 18);
     border-radius: 7px;
     border: 1.5px solid rgb(52, 52, 69);
     color: rgb(214, 210, 210);
@@ -61,10 +70,10 @@
 }
 
 .search:focus {
-  box-shadow: 0 0 10px 2px rgba(150, 150, 255, 0.15); 
-  outline: none;
-  transition: box-shadow 0.1s ease;
+ border: 2px solid rgb(62, 61, 115); 
+ outline: none;
 }
+
 
 .search-icon {
     width: 18px;
@@ -74,22 +83,27 @@
     top:46px;
     z-index: 3;
 }
+
+
 .filterlogo{
     width: 15px;
     height: 21px;
     position: absolute;
     top: 46px;
-    left: 1382px;
+    left: 72vw;
     filter: brightness(0) saturate(100%) invert(43%) sepia(90%) saturate(600%) hue-rotate(180deg);
     z-index: 3;
 }
 
 .search:hover{
-    box-shadow: 0 0 1px 1px  rgb(108, 108, 108);
+    
+    box-shadow: 0 0 10px 2px rgba(150, 150, 255, 0.15); 
+  outline: none;
+  transition: box-shadow 0.1s ease;
 }
 
 .buttonlay{
-    background-color: rgb(26, 25, 38);
+    background-color: rgb(18, 18, 18);
     position: absolute;
     height: 55px;
     width: 275px;
@@ -116,7 +130,7 @@
     top:5px ;
     left: 5px;
     border-radius: 8px;
-    background-color: rgb(26, 25, 38); 
+    background-color: rgb(18, 18, 18);
     border: rgb(26, 25, 38); 
     color:#6D6B6B;
     font-family: 'Poppins', sans-serif;
@@ -146,7 +160,7 @@
     top:5px ;
     left: 55px;
     border-radius: 8px;
-    background-color: rgb(26, 25, 38); 
+    background-color: rgb(18, 18, 18); 
     border: rgb(26, 25, 38); 
     color:#6D6B6B;
     font-family: 'Poppins', sans-serif;
@@ -171,7 +185,7 @@
     top:5px ;
     left: 125px;
     border-radius: 8px;
-    background-color: rgb(26, 25, 38); 
+   background-color: rgb(18, 18, 18); 
     border: rgb(26, 25, 38); 
     color:#6D6B6B;
     font-family: 'Poppins', sans-serif;
@@ -195,7 +209,7 @@
     top:5px;
     left: 185px;
     border-radius: 8px;
-    background-color: rgb(26, 25, 38); 
+    background-color: rgb(18, 18, 18); 
     border: rgb(26, 25, 38); 
     color:#6D6B6B;
     font-family: 'Poppins', sans-serif;
@@ -216,7 +230,7 @@
 .filter {
   position: absolute;
   top: 38px;
-  left: 1400px;
+  left: 72.9vw;
   
   
   font-size: 15px;
@@ -231,12 +245,12 @@
 .custom-dropdown {
   position: absolute;
   top: 38px;
-  left: 1468px;
+  left: 76vw;
   width: 200px;
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   color: #a8a7a7;
-  background-color: rgb(26, 25, 38);
+  background-color: rgb(18, 18, 18);
   border: 1.5px solid rgb(52, 52, 69);
   border-radius: 6px;
   cursor: pointer;
@@ -244,13 +258,13 @@
 }
 
 .custom-dropdown:focus {
-
+box-shadow: 0 0 1px 1px  rgb(62, 61, 115); 
+  outline: none;
+}
+.custom-dropdown:hover {
   box-shadow: 0 0 10px 2px rgba(150, 150, 255, 0.15); 
   outline: none;
   transition: box-shadow 0.1s ease;
-}
-.custom-dropdown:hover {
- box-shadow: 0 0 1px 1px  rgb(108, 108, 108);
   
 }
 
@@ -263,7 +277,7 @@
   display: none;
   top: calc(100% + 10px);
   width: 200px;
-  background-color: rgb(26, 25, 38);
+  background-color: rgb(18, 18, 18); 
   border: 1.5px solid rgb(52, 52, 69);
   border-radius: 6px;
   
@@ -283,7 +297,7 @@
 }
 
 .order1{
-    background-color: rgb(37, 34, 60);
+    background-color: rgb(29, 28, 38);
     border-radius: 9px;
     width:295px;
     height: 420px;
@@ -291,51 +305,188 @@
     left: 0px;
     position: absolute;
     transform-origin: top;
+    border: 1.5px solid rgb(52, 52, 69);
 }
 .order2{
-    background-color: rgb(37, 34, 60);
+    background-color: rgb(29, 28, 38);
     border-radius: 9px;
     width:295px;
     height: 420px;
     top: 130px;
     left: 315px;
     position: absolute;
-    
+    border: 1.5px solid rgb(52, 52, 69);
 }
 .order3{
-    background-color: rgb(37, 34, 60);
+    background-color: rgb(29, 28, 38);
     border-radius: 9px;
     width:295px;
     height: 420px;
     top: 130px;
     left: 630px;
     position: absolute;
+    border: 1.5px solid rgb(52, 52, 69);
 }
 .order4{
-    background-color: rgb(37, 34, 60);
+    background-color: rgb(29, 28, 38);
     border-radius: 9px;
     width:295px;
     height: 420px;
     top: 130px;
     left: 945px;
     position: absolute;
+    border: 1.5px solid rgb(52, 52, 69);
 }
 .order5{
-    background-color: rgb(37, 34, 60);
+    background-color: rgb(29, 28, 38);
     border-radius: 9px;
     width:295px;
     height: 420px;
     top: 130px;
     left: 1260px;
     position: absolute;
+    border: 1.5px solid rgb(52, 52, 69);
 }
 .order6{
-    background-color: rgb(37, 34, 60);
+    background-color: rgb(29, 28, 38);
     border-radius: 9px;
     width:295px;
     height: 420px;
     top: 130px;
     left: 1575px;
     position: absolute;
+    border: 1.5px solid rgb(52, 52, 69);
 }
 
+.order7{
+    background-color: rgb(29, 28, 38);
+    border-radius: 9px;
+    width:295px;
+    height: 420px;
+    top: 573px;
+    left: 0px;
+    position: absolute;
+    transform-origin: top;
+    border: 1.5px solid rgb(52, 52, 69);
+}
+.order8{
+    background-color: rgb(29, 28, 38);
+    border-radius: 9px;
+    width:295px;
+    height: 420px;
+    top: 573px;
+    left: 315px;
+    position: absolute;
+    border: 1.5px solid rgb(52, 52, 69);
+}
+
+.order9{
+    background-color: rgb(29, 28, 38);
+    border-radius: 9px;
+    width:295px;
+    height: 420px;
+    top: 573px;
+    left: 630px;
+    position: absolute;
+    border: 1.5px solid rgb(52, 52, 69);
+}
+.order10{
+    background-color: rgb(29, 28, 38);
+    border-radius: 9px;
+    width:295px;
+    height: 420px;
+    top: 573px;
+    left: 945px;
+    position: absolute;
+    border: 1.5px solid rgb(52, 52, 69);
+}
+.order11{
+    background-color: rgb(29, 28, 38);
+    border-radius: 9px;
+    width:295px;
+    height: 420px;
+    top: 573px;
+    left: 1260px;
+    position: absolute;
+    border: 1.5px solid rgb(52, 52, 69);
+}
+.order12{
+    background-color: rgb(29, 28, 38);
+    border-radius: 9px;
+    width:295px;
+    height: 420px;
+    top: 573px;
+    left: 1575px;
+    position: absolute;
+    border: 1.5px solid rgb(52, 52, 69);
+}
+
+.store{
+
+    position: fixed;
+    height: 45px;
+    width: 90px;
+    top:35px ;
+    left: 340px;
+    
+    background-color: rgb(18, 18, 18);
+    border: rgb(26, 25, 38); 
+    color:#6D6B6B;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15;
+    border-radius: 1px;
+     padding-left: 29px;
+}.store:hover{
+
+    position: fixed;
+    
+        
+    background-color: rgb(44, 44, 45); 
+   
+    color:#d9d6d6;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15;
+    
+}
+.storelogo{
+     height: 23px; /* or whatever size fits */
+    width: 20px;
+    margin-right: 8px;
+    position: absolute;
+    left: 16px;
+    top: 11px;
+}
+
+.free{
+    position: fixed;
+    height: 45px;
+    width: 140px;
+    top:35px ;
+    left: 430px;
+    
+    background-color: rgb(18, 18, 18);
+    border: rgb(26, 25, 38); 
+    color:#6D6B6B;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15;
+    border-radius: 1px;
+     padding-left: 29px;
+   
+}
+.free:hover{
+    position: fixed;
+    background-color: rgb(44, 44, 45); 
+    color:#d9d6d6;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15;
+    
+}
+.giftlogo{
+    height: 18px; /* or whatever size fits */
+    width: 19px;
+    margin-right: 8px;
+    position: absolute;
+    left: 25px;
+    top: 13px;
+     filter: brightness(0) saturate(50%) invert(55%); /* makes it white */
+}
