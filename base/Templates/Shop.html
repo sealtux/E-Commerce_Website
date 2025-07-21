@@ -10,18 +10,28 @@
         <div class = 'layer1'>
              <!-- Header content here -->
               <div class = 'layer1sec'></div>
+          
+              <div class = categories>
 
               <button class = "store" > 
               <img src="{% static 'images/store.png' %}" class="storelogo"> Store
               </button>
 
-              <button class = "free" ><img src="{% static 'images/gift.png' %}" class="giftlogo">Free Items
+              <button class = "free">
+                <img src="{% static 'images/gift.png' %}" class="giftlogo">Free Items
               </button>
 
-              <button class = "track" >Track Order</button>
-              <button class = "help" >Help</button>
-              <button class = "group" >Groups</button>
+              <button class = "track" > 
+                <img src="{% static 'images/receipt.png' %}" class="receiptlogo"> Track Order</button>
 
+              <button class = "help" > 
+                <img src="{% static 'images/question.png' %}" class="questionlogo">  Help</button>
+
+              <button class = "group" >
+                <img src = "{%static 'images/groups.png' %}" class = "grouplogo">Groups</button>
+
+
+        </div>
         </div>
 
         <div class = 'layer2'>
@@ -126,6 +136,31 @@
         <!--for javascript-->
         <script>
             
+       
+  
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".categories button");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", function () {
+      // Remove active class from all buttons
+      buttons.forEach(b => b.classList.remove("active"));
+      // Add active to the clicked one
+      this.classList.add("active");
+    });
+  });
+
+  // Set "store" as active by default
+  const storeBtn = document.querySelector(".categories .store");
+  if (storeBtn) {
+    storeBtn.classList.add("active");
+  }
+});
+
+
+
+
+
              document.addEventListener("DOMContentLoaded", function () {
     const buttons = document.querySelectorAll(".buttonlay button");
 
@@ -143,20 +178,7 @@
   });
 
 
-            //this is for to set the all button as a default 
-            document.addEventListener("DOMContentLoaded", function () {
-  const buttons = document.querySelectorAll(".buttonlay button");
-
-  buttons.forEach(btn => {
-    btn.addEventListener("click", function () {
-      buttons.forEach(b => b.classList.remove("active"));
-      this.classList.add("active");
-    });
-  });
-
-  // set All as default active
-  document.querySelector(".buttonlay .all").classList.add("active");
-});
+          
 
         //this for the effect when hovering an order
         function popUp1(element) {

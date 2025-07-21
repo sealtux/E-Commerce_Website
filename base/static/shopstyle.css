@@ -150,6 +150,16 @@
     color:#fffcfc
 
 }
+.all:focus,
+ all:active{
+    box-shadow: none;
+    background-color: inherit;
+    outline: none;
+    position: absolute;
+    border-bottom: 2px solid rgb(62, 61, 115); 
+    color:#fffcfc
+
+}
 
 
 
@@ -177,6 +187,16 @@
     border: 1.5px solid rgb(62, 61, 115); 
     color:#fffcfc
 }
+.Crops:focus,
+ Crops:active{
+    box-shadow: none;
+    background-color: inherit;
+    outline: none;
+    position: absolute;
+    border-bottom: 2px solid rgb(62, 61, 115); 
+    color:#fffcfc
+
+}
 
 .Pets{
     position: absolute;
@@ -202,6 +222,16 @@
     border: 1.5px solid rgb(62, 61, 115); 
     color:#fffcfc
 }
+.Pets:focus,
+ Pets:active{
+    box-shadow: none;
+    background-color: inherit;
+    outline: none;
+    position: absolute;
+    border-bottom: 2px solid rgb(62, 61, 115); 
+    color:#fffcfc
+
+}
 .Bundles{
     position: absolute;
     height: 45px;
@@ -225,7 +255,16 @@
     border: 1.5px solid rgb(62, 61, 115); 
     color:#fffcfc
 }
+.Bundles:focus,
+ Bundles:active{
+    box-shadow: none;
+    background-color: inherit;
+    outline: none;
+    position: absolute;
+    border-bottom: 2px solid rgb(62, 61, 115); 
+    color:#fffcfc
 
+}
 
 .filter {
   position: absolute;
@@ -423,7 +462,9 @@ box-shadow: 0 0 1px 1px  rgb(62, 61, 115);
 
 .store{
 
-    position: fixed;
+    border: none;
+    border-bottom: 2px solid transparent;
+    position: absolute  ;
     height: 45px;
     width: 90px;
     top:35px ;
@@ -436,17 +477,18 @@ box-shadow: 0 0 1px 1px  rgb(62, 61, 115);
     font-size: 15;
     border-radius: 1px;
      padding-left: 29px;
-}.store:hover{
+    outline: none;
+    
+    }
+.store:hover{
 
-    position: fixed;
+    
     
         
     background-color: rgb(44, 44, 45); 
    
     color:#d9d6d6;
-    font-family: 'Poppins', sans-serif;
-    font-size: 15;
-    
+   
 }
 .storelogo{
      height: 23px; /* or whatever size fits */
@@ -455,9 +497,25 @@ box-shadow: 0 0 1px 1px  rgb(62, 61, 115);
     position: absolute;
     left: 16px;
     top: 11px;
+    
+}
+/*this is for the background when you click the arrow button*/
+
+.store.active{
+    top:35px;
+    box-shadow: none;
+    background-color: inherit;
+    outline: none;
+    position: absolute;
+    border-bottom: 2px solid  rgb(62, 61, 115); 
+    color:#ffffff;
+    
 }
 
+
+
 .free{
+    border-bottom: 2px solid transparent;
     position: fixed;
     height: 45px;
     width: 140px;
@@ -488,5 +546,180 @@ box-shadow: 0 0 1px 1px  rgb(62, 61, 115);
     position: absolute;
     left: 25px;
     top: 13px;
-     filter: brightness(0) saturate(50%) invert(55%); /* makes it white */
+     filter: brightness(0) saturate(50%) invert(55%); /* makes it gray */
 }
+
+.free:focus,
+ .free:active{
+    box-shadow: none;
+    background-color: inherit;
+    outline: none;
+    position: absolute;
+    border-bottom: 2px solid rgb(62, 61, 115); 
+    color:#ffffff;
+    
+}
+.free.active{
+    top:35px;
+    box-shadow: none;
+    background-color: inherit;
+    outline: none;
+    position: absolute;
+    border-bottom: 2px solid  rgb(62, 61, 115); 
+    color:#ffffff;
+    
+}
+.track{
+
+    position: absolute  ;
+    height: 45px;
+    width: 140px;
+    top:35px ;
+    left: 570px;
+    
+    background-color:rgb(18, 18, 18);
+    border: rgb(26, 25, 38); 
+    color:#6D6B6B;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15;
+    border-radius: 1px;
+     padding-left: 29px;
+}
+.track:hover{
+    position: fixed;
+    background-color: rgb(44, 44, 45); 
+    color:#d9d6d6;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15;
+    
+}
+.receiptlogo{
+height: 23px; /* or whatever size fits */
+    width: 20px;
+    margin-right: 8px;
+    position: absolute;
+    left: 16px;
+    top: 11px;
+    filter: brightness(0) saturate(50%) invert(55%); /* makes it gray */
+}
+
+.track:focus,
+ .track:active{
+    box-shadow: none;
+    background-color: inherit;
+    outline: none;
+    position: absolute;
+    border-bottom: 2px solid rgb(62, 61, 115); 
+    color:#ffffff;
+    
+}
+.track.active{
+    top:35px;
+    box-shadow: none;
+    background-color: inherit;
+    outline: none;
+    position: absolute;
+    border-bottom: 2px solid  rgb(62, 61, 115); 
+    color:#ffffff;
+    
+}
+.help{
+
+    position: absolute  ;
+    height: 45px;
+    width: 100px;
+    top:35px ;
+    left: 710px;
+    
+    background-color:rgb(18,18,18);
+    border: rgb(26, 25, 38); 
+    color:#6D6B6B;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15;
+    border-radius: 1px;
+     padding-left: 29px;
+}
+.help:hover{
+    position: fixed;
+    background-color: rgb(44, 44, 45); 
+    color:#d9d6d6;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15;
+    
+}
+.questionlogo{
+height: 23px; /* or whatever size fits */
+    width: 23px;
+    margin-right: 8px;
+    position: absolute;
+    left: 19px;
+    top: 11px;
+    filter: brightness(0) saturate(50%) invert(55%); /* makes it gray */
+}
+
+.help:focus,
+ .help:active{
+    box-shadow: none;
+    background-color: inherit;
+    outline: none;
+    position: absolute;
+    border-bottom: 2px solid rgb(62, 61, 115); 
+    color:#ffffff;
+    
+}
+.help.active{
+    top:35px;
+    box-shadow: none;
+    background-color: inherit;
+    outline: none;
+    position: absolute;
+    border-bottom: 2px solid  rgb(62, 61, 115); 
+    color:#ffffff;
+    
+}
+
+.group{
+
+    position: absolute  ;
+    height: 45px;
+    width: 110px;
+    top:35px ;
+    left: 810px;
+    
+    background-color:rgb(18,18,18);
+    border: rgb(26, 25, 38); 
+    color:#6D6B6B;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15;
+    border-radius: 1px;
+     padding-left: 34px;
+}
+.group:hover{
+    position: fixed;
+    background-color: rgb(44, 44, 45); 
+    color:#d9d6d6;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15;
+    
+}
+.grouplogo{
+height: 23px; /* or whatever size fits */
+    width: 23px;
+    margin-right: 8px;
+    position: absolute;
+    left: 19px;
+    top: 11px;
+    filter: brightness(0) saturate(50%) invert(55%); /* makes it gray */
+}
+
+.group:focus,
+ .group:active{
+    box-shadow: none;
+    background-color: inherit;
+    outline: none;
+    position: absolute;
+    border-bottom: 2px solid rgb(62, 61, 115); 
+    color:#ffffff;
+    
+}
+

@@ -17,6 +17,10 @@ def shop(request):
     
     return render(request,'Shop.html')
 
+def freeitems(request):
+
+    return render(request,'free.html')
+
 def login_views(request):
     
     if request.method =="POST":
