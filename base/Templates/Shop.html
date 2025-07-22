@@ -30,8 +30,15 @@
               <button class = "group" >
                 <img src = "{%static 'images/groups.png' %}" class = "grouplogo">Groups</button>
 
-
+              
         </div>
+
+        <button class = "cart"onclick="toggleFrame()">
+        <img src = "{%static 'images/cart.png' %}" class = "cartlogo"></button>
+        <div id="cartFrame" class="cart-frame">
+ 
+        </div>
+
         </div>
 
         <div class = 'layer2'>
@@ -136,7 +143,10 @@
         <!--for javascript-->
         <script>
             
-       
+       function toggleFrame() {
+  const frame = document.getElementById("cartFrame");
+  frame.style.display = (frame.style.display === "block") ? "none" : "block";
+}
   
 document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.querySelectorAll(".categories button");

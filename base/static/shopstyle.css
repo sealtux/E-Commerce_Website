@@ -710,6 +710,7 @@ height: 23px; /* or whatever size fits */
     left: 19px;
     top: 11px;
     filter: brightness(0) saturate(50%) invert(55%); /* makes it gray */
+    
 }
 
 .group:focus,
@@ -723,3 +724,39 @@ height: 23px; /* or whatever size fits */
     
 }
 
+.cart{
+    position: absolute  ;
+    height: 36px;
+    width: 35px;
+    top:35px ;
+    left: 80vw;
+    background-color: rgb(29, 28, 38);
+    border-radius: 5px;
+     color: none;
+     border: none; 
+}
+.cartlogo{
+   height: 1vw; 
+    width: 1vw;
+    margin-right: 8px;
+    
+    left: 5px;
+    top: 5px;
+    
+}
+.cart:hover{
+     background-color: rgb(47, 45, 60);
+}
+.cart-frame {
+ background-color: rgb(29, 28, 38);
+    border-radius: 9px;
+    width:295px;
+    height:837px;
+    top: 106px;
+    left: 1591px;
+    position: absolute;
+    border: 1.5px solid rgb(52, 52, 69);
+  display: none;
+  z-index: 7; /* make sure it stays on top */
+  
+}
