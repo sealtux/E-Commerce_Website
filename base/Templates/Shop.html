@@ -113,8 +113,10 @@
         <div class = "order5" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)">
         </div>
         <div class = "order6" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)">
+          <h1>hELLo1</h1>
         </div>
         <div class = "order7" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)">
+           <h1>hELLo2</h1>
         </div>
         <div class = "order8" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)">
         </div>
@@ -143,11 +145,72 @@
         <!--for javascript-->
         <script>
             
-       function toggleFrame() {
+    
+
+let isToggling = false;
+
+function toggleFrame() {
+  if (isToggling) return;
+
   const frame = document.getElementById("cartFrame");
-  frame.style.display = (frame.style.display === "block") ? "none" : "block";
-}
+  const order = document.querySelector(".order6");
+  const order2 = document.querySelector(".order7");
+  const order3 = document.querySelector(".order12");
+  const notice = document.querySelector(".notice");
+  const panel = document.querySelector(".panel")
+  const logofilter = document.querySelector(".filterlogo")
+  const filtertext = document.querySelector(".filter")
+  const dropdown = document.querySelector(".custom-dropdown")
+
+
+
+  const isVisible = frame.classList.contains("visible");
+
+  isToggling = true;
+
+  // Toggle cart frame visibility
+  frame.classList.toggle("visible");
+
+
+    // Resize the div
+  notice.classList.toggle("resized");
+  panel.classList.toggle("resized");
+   // reposition
+  logofilter.classList.toggle("newpos");
+  filtertext.classList.toggle("newpos");
+  dropdown.classList.toggle("newpos");
   
+
+  // Apply transform via JS (more reliable than class toggling)
+    if (!isVisible) {
+    // Set transform and store base transform
+    order.dataset.baseTransform = "translate(-1575px, 443px)";
+    order.style.transform = `${order.dataset.baseTransform} scaleY(1)`;
+
+    order2.dataset.baseTransform = "translate(0px, 443px)";
+    order2.style.transform = `${order2.dataset.baseTransform} scaleY(1)`;
+
+    order3.dataset.baseTransform = "translate(-1260px, 443px)";
+    order3.style.transform = `${order3.dataset.baseTransform} scaleY(1)`;
+  } else {
+    // Reset using dataset
+    order.dataset.baseTransform = "translate(0px, 0px)";
+    order.style.transform = `${order.dataset.baseTransform} scaleY(1)`;
+
+    order2.dataset.baseTransform = "translate(0px, 0px)";
+    order2.style.transform = `${order2.dataset.baseTransform} scaleY(1)`;
+
+    order3.dataset.baseTransform = "translate(0px,0px)";
+    order3.style.transform = `${order3.dataset.baseTransform} scaleY(1)`;
+  }
+
+
+  setTimeout(() => {
+    isToggling = false;
+  }, 550); // match transition duration
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.querySelectorAll(".categories button");
 
@@ -192,12 +255,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         //this for the effect when hovering an order
         function popUp1(element) {
-        element.style.transform = "scaleY(1.01)";
-        element.style.transition = "transform 0.2s ease";
-        }
+  const base = element.dataset.baseTransform || "translate(0, 0)";
+  element.style.transform = `${base} scaleY(1.01)`;
+  element.style.transition = "transform 0.2s ease";
+}
 
-        function popDown1(element) {
-        element.style.transform = "scale(1)";
+function popDown1(element) {
+  const base = element.dataset.baseTransform || "translate(0, 0)";
+  element.style.transform = `${base} scale(1)`;
 }
       
 
