@@ -326,6 +326,7 @@
   transform: translateX(100%);
 }
 .custom-dropdown.newpos {
+    transition: opacity 0.5s ease, transform 1s ease;
   transform: translateX(0%);
   left: 56.2vw;
 }
@@ -815,4 +816,110 @@ height: 23px; /* or whatever size fits */
   transform: translateY(0);
   visibility: visible;
 
+}
+.containment{
+  width: 295px;
+  border-bottom: 1.5px solid rgb(52, 52, 69);
+  height: 50px;
+  
+}
+
+.containment2{
+  width: 295px;
+  border-bottom: 1px solid rgb(41, 40, 47);
+  height: 40px;
+  
+  
+}
+.circle1{
+    position: absolute;
+   background-color: rgb(42, 41, 55);
+    width: 80px;
+    height: 24px;
+    border-radius: 5px;
+    left:18px;
+    top:60px;
+}
+#circle1msg{
+    position: absolute;
+    color:#d9d6d6;
+ 
+  font-size: 10px;
+    padding-left: 17px;
+    padding-top: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.circle2{
+    position: absolute;
+   background-color: rgb(42, 41, 55);
+    width: 90px;
+    height: 24px;
+    border-radius: 5px;
+    left:104px;
+    top:60px;
+}
+#circle2msg{
+    position: absolute;
+    color:#d9d6d6;
+ 
+  font-size: 10px;
+    padding-left: 17px;
+    padding-top: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.circle3{
+    position: absolute;
+   background-color: rgb(42, 41, 55);
+    width: 78px;
+    height: 24px;
+    border-radius: 5px;
+    left:200px;
+    top:60px;
+}
+#circle3msg{
+    position: absolute;
+    color:#d9d6d6;
+ 
+  font-size: 10px;
+    padding-left: 17px;
+    padding-top: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.containment3{
+  width: 295px;
+  border-bottom: 0.5px solid rgb(41, 40, 47);
+  height: 80px;
+  
+}
+
+.containment4{
+  width: 295px;
+  border-bottom: 0.5px solid rgb(41, 40, 47);
+  height: 550px;
+  
+}
+
+
+#yourcart{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#d9d6d6;
+    font-size: 1vw;
+    top:0.6vw;
+    left:2.3vw;
+    position:absolute;
+    font-weight: 500; /* Medium thickness */
+
+}
+.checkout{
+    position:absolute;
+    top:745px;
+    left:19px;
+    width: 260px;
+    height:45px;
+    border-radius: 5px;
+    color:#d9d6d6;
+    background-color: rgb(80, 55, 203);
+        background: linear-gradient(160deg, rgb(80, 55, 203), rgb(103, 83, 203));
+    border: none;
 }
