@@ -107,12 +107,16 @@
     left: 71vw;
     filter: brightness(0) saturate(100%) invert(43%) sepia(90%) saturate(600%) hue-rotate(180deg);
     z-index: 3;
-     transition: opacity 2s ease, transform 1s ease;
+    transition: opacity 1s ease, transform 1s ease;
+   transition: left 1s ease, transform 1s ease;
   transform: translateX(100%);
 }
 .filterlogo.newpos{
-     transform: translateX(0%);
+    transition: opacity 1s ease, transform 1s ease;
+   transition: left 1s ease, transform 1s ease;
+     transform: translateX(10%);
     left: 52vw;
+
 }
 
 .search:hover{
@@ -290,17 +294,20 @@
   position: absolute;
   top: 38px;
   left: 69.8vw;
-  
+   
   
   font-size: 15px;
   color: #6D6B6B;
   font-family: 'Poppins', sans-serif;
-   transition: opacity 2s ease, transform 1s ease;
+   transition: opacity 1s ease, transform 1s ease;
+   transition: left 1s ease, transform 1s ease;
   transform: translateX(100%);
 }
 
 .filter.newpos {
     transform: translateX(10%);
+     transition: opacity 1s ease, transform 1s ease;
+   transition: left 1s ease, transform 1s ease;
   left: 52.7vw;
 }
 
@@ -322,11 +329,26 @@
   border-radius: 6px;
   cursor: pointer;
   z-index: 100;
-   transition: opacity 0.5s ease, transform 1s ease;
+   opacity: 1;
+pointer-events: auto;
+
   transform: translateX(100%);
+  transition: opacity 1s ease, transform 1s ease;
+   transition: left 1s ease, transform 1s ease;
+  
 }
+/*this removes the hover around the custom dropdown so there is no interferance for the animation */
+.custom-dropdown.no-hover:hover {
+  transform: none;
+  opacity: 1;
+}
+.custom-dropdown.no-hover {
+  pointer-events: none;
+}
+
 .custom-dropdown.newpos {
-    transition: opacity 0.5s ease, transform 1s ease;
+    transition: opacity 1s ease, transform 1s ease;
+   transition: left 1s ease, transform 1s ease;
   transform: translateX(0%);
   left: 56.2vw;
 }

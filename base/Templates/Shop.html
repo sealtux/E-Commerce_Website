@@ -182,7 +182,7 @@ function toggleFrame() {
   const logofilter = document.querySelector(".filterlogo")
   const filtertext = document.querySelector(".filter")
   const dropdown = document.querySelector(".custom-dropdown")
-
+ 
 
 
   const isVisible = frame.classList.contains("visible");
@@ -200,7 +200,9 @@ function toggleFrame() {
   logofilter.classList.toggle("newpos");
   filtertext.classList.toggle("newpos");
   dropdown.classList.toggle("newpos");
-  
+
+  dropdown.classList.add("no-hover");  //so that there is no interferance for the animation
+
 
   // Apply transform via JS (more reliable than class toggling)
     if (!isVisible) {
@@ -228,7 +230,8 @@ function toggleFrame() {
 
   setTimeout(() => {
     isToggling = false;
-  }, 550); // match transition duration
+    dropdown.classList.remove("no-hover"); 
+  }, 880); // match transition duration
 }
 
 
