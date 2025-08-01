@@ -4,7 +4,8 @@ from .models import partic #this gets the the room mode
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth.decorators import login_required
-
+from django.http import HttpResponse
+from .models import visitor
 
 hello = {}
 # Create your views here.
@@ -13,9 +14,24 @@ def home(request):
     return render(request,'home.html')
 
 
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        return x_forwarded_for.split(',')[0]
+    return request.META.get('REMOTE_ADDR')
+
 def shop(request):
-    
-    return render(request,'Shop.html')
+    if request.method == 'POST':
+        ip = get_client_ip(request)
+        lisitor, created = visitor.objects.get_or_create(ip_address=ip)
+        lisitor.visit_count += 1
+        lisitor.save()
+
+    return render(request, 'Shop.html')
+
+
+
 
 def freeitems(request):
 
@@ -49,6 +65,8 @@ def login_views(request):
 def forgot(request):
     
     return render(request,'forgot.html')
+
+
 
 
 

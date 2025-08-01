@@ -123,31 +123,44 @@
         </div>
 
         <div class = "order1" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)" > 
+          <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="orderadd2">Add</button>
+      </form>
         
         </div>
         <div class = "order2"  onmouseenter="popUp1(this)" onmouseleave="popDown1(this)" >
+        <button class = "orderadd2">Add</button>
         </div>
         <div class = "order3" onmouseenter="popUp1(this)" onmouseleave = "popDown1(this)">
+        <button class = "orderadd3">Add</button>
         </div>
         <div class = "order4" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)">
+        <button class = "orderadd4">Add</button>
         </div>
         <div class = "order5" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)">
+        <button class = "orderadd5">Add</button>
         </div>
         <div class = "order6" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)">
-          <h1>hELLo1</h1>
+        <button class = "orderadd6">Add</button>
         </div>
         <div class = "order7" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)">
-           <h1>hELLo2</h1>
+        <button class = "orderadd7">Add</button>
         </div>
         <div class = "order8" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)">
+        <button class = "orderadd8">Add</button>
         </div>
         <div class = "order9" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)">
+        <button class = "orderadd9">Add</button>
         </div>
         <div class = "order10" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)">
+        <button class = "orderadd10">Add</button>
         </div>
         <div class = "order11" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)">
+        <button class = "orderadd11">Add</button>
         </div>
         <div class = "order12" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)">
+        <button class = "orderadd12">Add</button>
         </div>
         
         
@@ -281,12 +294,14 @@ document.addEventListener("DOMContentLoaded", function () {
         function popUp1(element) {
   const base = element.dataset.baseTransform || "translate(0, 0)";
   element.style.transform = `${base} scaleY(1.01)`;
+  element.style.transform = `${base} scaleX(1.01)`;
   element.style.transition = "transform 0.2s ease";
 }
 
 function popDown1(element) {
   const base = element.dataset.baseTransform || "translate(0, 0)";
   element.style.transform = `${base} scale(1)`;
+
 }
       
 

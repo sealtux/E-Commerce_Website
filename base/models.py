@@ -20,6 +20,13 @@ class partic(models.Model):
     def __str__(self):
         return self.name
     
+class visitor(models.Model):
+    ip_address = models.GenericIPAddressField(unique=True)
+    visit_count = models.PositiveIntegerField(default=0)
+    visited_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.ip_address} ({self.visit_count} clicks)"
 
 
 
