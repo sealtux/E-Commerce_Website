@@ -6,7 +6,7 @@ from django.contrib.auth.hashers import check_password
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from .models import visitor
-
+from django.http import JsonResponse
 hello = {}
 # Create your views here.
 def home(request):
@@ -28,6 +28,9 @@ def shop(request):
         lisitor.visit_count += 1
         lisitor.save()
 
+        return JsonResponse({'status': 'success', 'visits': lisitor.visit_count})
+
+    # GET request — load the page normally
     return render(request, 'Shop.html')
 
 

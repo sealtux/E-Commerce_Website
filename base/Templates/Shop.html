@@ -123,10 +123,8 @@
         </div>
 
         <div class = "order1" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)" > 
-          <form method="POST">
-        {% csrf_token %}
-        <button type="submit" class="orderadd2">Add</button>
-      </form>
+        <button  class = "orderadd1"onclick="addToCart(this)" data-item-id="{{ item.id }}">Add</button>
+
         
         </div>
         <div class = "order2"  onmouseenter="popUp1(this)" onmouseleave="popDown1(this)" >
@@ -327,6 +325,43 @@ document.addEventListener("click",function(event){
         }
     });
 });
+
+function addToCart(button) {
+    const itemId = button.getAttribute('data-item-id');
+
+    fetch('/shop/', {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': getCookie('csrftoken'),
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: `item_id=${itemId}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.message || "Item added");
+    });
+}
+
+// Automatically run on page load (or trigger by button)
+recordVisit();
+
+// CSRF token helper
+function getCookie(name) {
+    // Extracts CSRF token from browser cookies
+     let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let cookie of cookies) {
+            cookie = cookie.trim();
+            if (cookie.startsWith(name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
 
 </script>
 
