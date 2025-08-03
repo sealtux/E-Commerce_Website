@@ -168,14 +168,9 @@
     
 }
 
-.all:focus{
-    background-color: rgb(38, 36, 79); 
-    border: 1.5px solid rgb(62, 61, 115); 
-    color:#fffcfc
 
-}
-.all:focus,
- .all:active{
+
+ .all.active{
     box-shadow: none;
     background-color: inherit;
     outline: none;
@@ -206,13 +201,8 @@
     color:#d9d6d6
 }
 
-.Crops:focus{
-    background-color: rgb(38, 36, 79); 
-    border: 1.5px solid rgb(62, 61, 115); 
-    color:#fffcfc
-}
-.Crops:focus,
- .Crops:active{
+
+ .Crops.active{
     box-shadow: none;
     background-color: inherit;
     outline: none;
@@ -241,13 +231,8 @@
     color:#d9d6d6
 }
 
-.Pets:focus{
-    background-color: rgb(38, 36, 79); 
-    border: 1.5px solid rgb(62, 61, 115); 
-    color:#fffcfc
-}
-.Pets:focus,
- .Pets:active{
+
+ .Pets.active{
     box-shadow: none;
     background-color: inherit;
     outline: none;
@@ -274,13 +259,9 @@
     color:#d9d6d6
 }
 
-.Bundles:focus{
-    background-color: rgb(38, 36, 79); 
-    border: 1.5px solid rgb(62, 61, 115); 
-    color:#fffcfc
-}
-.Bundles:focus,
- .Bundles:active{
+
+
+ .Bundles.active{
     box-shadow: none;
     background-color: inherit;
     outline: none;
@@ -761,16 +742,7 @@ transition: transform 0.5s ease;
      filter: brightness(0) saturate(50%) invert(55%); /* makes it gray */
 }
 
-.free:focus,
- .free:active{
-    box-shadow: none;
-    background-color: inherit;
-    outline: none;
-    position: absolute;
-    border-bottom: 2px solid rgb(62, 61, 115); 
-    color:#ffffff;
-    
-}
+
 .free.active{
     top:35px;
     box-shadow: none;
@@ -815,16 +787,8 @@ height: 23px; /* or whatever size fits */
     filter: brightness(0) saturate(50%) invert(55%); /* makes it gray */
 }
 
-.track:focus,
- .track:active{
-    box-shadow: none;
-    background-color: inherit;
-    outline: none;
-    position: absolute;
-    border-bottom: 2px solid rgb(62, 61, 115); 
-    color:#ffffff;
-    
-}
+
+
 .track.active{
     top:35px;
     box-shadow: none;
@@ -869,16 +833,8 @@ height: 23px; /* or whatever size fits */
     filter: brightness(0) saturate(50%) invert(55%); /* makes it gray */
 }
 
-.help:focus,
- .help:active{
-    box-shadow: none;
-    background-color: inherit;
-    outline: none;
-    position: absolute;
-    border-bottom: 2px solid rgb(62, 61, 115); 
-    color:#ffffff;
-    
-}
+
+
 .help.active{
     top:35px;
     box-shadow: none;
@@ -925,8 +881,10 @@ height: 23px; /* or whatever size fits */
     
 }
 
-.group:focus,
- .group:active{
+
+
+
+ .group.active{
     box-shadow: none;
     background-color: inherit;
     outline: none;
@@ -935,7 +893,6 @@ height: 23px; /* or whatever size fits */
     color:#ffffff;
     
 }
-
 .cart{
     position: absolute  ;
     height: 36px;
