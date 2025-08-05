@@ -23,7 +23,22 @@ def get_client_ip(request):
 
 def shop(request):
     if request.method == 'POST':
+        action = request.POST.get('action')
         ip = get_client_ip(request)
+
+        if action == 'movetofree':
+            return redirect('free') 
+        
+        elif action == 'movetotrack':
+            return redirect('track') 
+        
+        elif action == 'movetohelp':
+            return redirect('help')
+        
+        elif action == 'movetogroup':
+            return redirect('group')
+
+        # Handle visit tracking
         lisitor, created = visitor.objects.get_or_create(ip_address=ip)
         lisitor.visit_count += 1
         lisitor.save()
@@ -35,10 +50,21 @@ def shop(request):
 
 
 
-
 def freeitems(request):
 
     return render(request,'free.html')
+
+
+def track(request):
+    return render (request, "track.html")
+
+
+def help(request):
+    return render (request, "help.html")
+
+def group(request):
+    return render (request, "groups.html")
+
 
 def login_views(request):
     

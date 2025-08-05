@@ -17,18 +17,37 @@
               <img src="{% static 'images/store.png' %}" class="storelogo"> Store
               </button>
 
-              <button class = "free">
-                <img src="{% static 'images/gift.png' %}" class="giftlogo">Free Items
-              </button>
+              <form method="POST" style="display:inline;">
+                {% csrf_token %}
+                <input type="hidden" name="action" value="movetofree">
+                <button type="submit" class="free">
+                  <img src="{% static 'images/gift.png' %}" class="giftlogo">
+                  Free Items
+                </button>
+              </form>
 
-              <button class = "track" > 
-                <img src="{% static 'images/receipt.png' %}" class="receiptlogo"> Track Order</button>
+              <form method = "POST" style = "display:inline;">
+                 {% csrf_token %}
+              <input type = 'hidden' name = "action" value="movetotrack">
+              <button type = submit class = "track">
+              <img src="{% static 'images/receipt.png' %}" class="receiptlogo"> Track Order</button>
+              </form>  
 
-              <button class = "help" > 
-                <img src="{% static 'images/question.png' %}" class="questionlogo">  Help</button>
+              <form method = "POST" style = "display:inline;">
+                 {% csrf_token %}
+              <input type = 'hidden' name = "action" value="movetohelp">  <!--this for sending the value to the views (in the shop function)  -->
+              <button type = submit class = "help">
+              <img src="{% static 'images/question.png' %}" class="questionlogo">  Help</button>
+              </form>
+              
 
-              <button class = "group" >
-                <img src = "{%static 'images/groups.png' %}" class = "grouplogo">Groups</button>
+              <form method = "POST" style = "display:inline;">
+                 {% csrf_token %}
+              <input type = 'hidden' name = "action" value="movetogroup">  <!--this for sending the value to the views (in the shop function)  -->
+              <button type = submit class = "group">
+             <img src = "{%static 'images/groups.png' %}" class = "grouplogo">Groups</button>
+              </form>
+             
 
               
         </div>
@@ -92,7 +111,8 @@
                     </form>
                 
                     <div class = "buttonlay">
-                            <button class = "all" >All</button>
+                            
+                            <button class = "All">All</button>
                             <button class = "Crops">Crops</button>
                             <button class = "Pets">Pets</button>
                             <button class = "Bundles">Bundles</button>
@@ -124,8 +144,6 @@
 
         <div class = "order1" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)" > 
         <button  class = "orderadd1"onclick="addToCart(this)" data-item-id="{{ item.id }}">Add</button>
-
-        
         </div>
         <div class = "order2"  onmouseenter="popUp1(this)" onmouseleave="popDown1(this)" >
         <button class = "orderadd2">Add</button>
@@ -344,14 +362,14 @@ function addToCart(button) {
 }
 
 // Automatically run on page load (or trigger by button)
-recordVisit();
+
 
 // CSRF token helper
 function getCookie(name) {
     // Extracts CSRF token from browser cookies
      let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
-        const cookies = document.cookie.split(';');
+        const cookies = document.cookie.split(';'); 
         for (let cookie of cookies) {
             cookie = cookie.trim();
             if (cookie.startsWith(name + '=')) {
@@ -362,6 +380,9 @@ function getCookie(name) {
     }
     return cookieValue;
 }
+
+
+
 
 </script>
 
