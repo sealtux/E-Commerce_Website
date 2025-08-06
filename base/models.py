@@ -20,15 +20,19 @@ class partic(models.Model):
     def __str__(self):
         return self.name
     
+
+
 class visitor(models.Model):
     ip_address = models.GenericIPAddressField(unique=True)
     visit_count = models.PositiveIntegerField(default=0)
     visited_at = models.DateTimeField(auto_now=True)
+    item_ids = models.TextField(blank=True, null=True)  # Add this if not already
 
     def __str__(self):
         return f"{self.ip_address} ({self.visit_count} clicks)"
 
-
-
-
+    def add_item(self, item_id):
+        current = self.item_ids.split(',') if self.item_ids else []
+        current.append(item_id)
+        self.item_ids = ','.join(current)
      

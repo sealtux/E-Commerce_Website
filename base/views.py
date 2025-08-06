@@ -21,31 +21,41 @@ def get_client_ip(request):
         return x_forwarded_for.split(',')[0]
     return request.META.get('REMOTE_ADDR')
 
+from django.http import JsonResponse
+from .models import visitor
+
+def get_client_ip(request):
+    # adjust as needed
+    return request.META.get('REMOTE_ADDR')
+
 def shop(request):
     if request.method == 'POST':
-        action = request.POST.get('action')
         ip = get_client_ip(request)
+        lisitor, created = visitor.objects.get_or_create(ip_address=ip)
+        lisitor.visit_count += 1
 
+        # Handle product clicks
+        item_id = request.POST.get('item_id')
+        if item_id:
+            lisitor.add_item(item_id)
+            lisitor.save()
+            return JsonResponse({'message': f"{item_id} added to your visit record."})
+
+        # Handle nav actions
+        action = request.POST.get('action')
         if action == 'movetofree':
-            return redirect('free') 
-        
+            return redirect('free')
         elif action == 'movetotrack':
-            return redirect('track') 
-        
+            return redirect('track')
         elif action == 'movetohelp':
             return redirect('help')
-        
         elif action == 'movetogroup':
             return redirect('group')
 
-        # Handle visit tracking
-        lisitor, created = visitor.objects.get_or_create(ip_address=ip)
-        lisitor.visit_count += 1
         lisitor.save()
+        return JsonResponse({'status': 'success'})
 
-        return JsonResponse({'status': 'success', 'visits': lisitor.visit_count})
-
-    # GET request — load the page normally
+    # If GET
     return render(request, 'Shop.html')
 
 
