@@ -43,13 +43,14 @@
     z-index: 2;
     
      transform: translateX(0);
-  transition: transform 0.3s ease, width 0.3s ease;
+  transition: transform 1s ease, width 1s ease;
 }
 .notice.resized{
     transform: translateX(0px); /* slide left slightly */
     width:1556px;
     
 }
+
 
 .panel{
     background-color: rgb(29, 28, 38);
@@ -62,7 +63,7 @@
     border: 1.5px solid rgb(52, 52, 69);
     z-index: 3;
     transform: translateX(0);
-  transition: transform 0.3s ease, width 0.3s ease; 
+  transition: transform 1s ease, width 1s ease; 
 }
 .panel.resized{
      transform: translateX(0px);
@@ -259,7 +260,7 @@
     color:#d9d6d6
 }
 
-
+ 
 
  .Bundles.active{
     box-shadow: none;
@@ -396,7 +397,15 @@ box-shadow: 0 0 1px 1px  rgb(62, 61, 115);
         
         border: none;
 }
-
+.productimage1 {
+  width: 293.5px;
+  height: 260;
+  display: block;
+  margin-bottom: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: .9px solid rgb(52, 52, 69);
+}
 .order2{
     background-color: rgb(29, 28, 38);
     border-radius: 9px;
@@ -930,7 +939,7 @@ height: 23px; /* or whatever size fits */
   opacity: 0;
   transform: translateY(20px);
   visibility: hidden;
-  transition: opacity 2s ease, transform 0.3s ease;
+  transition: opacity 2s ease, transform 1s ease;
   transform: translateX(100%);
 }
 .cart-frame.visible {
