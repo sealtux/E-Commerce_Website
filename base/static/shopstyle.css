@@ -406,6 +406,56 @@ box-shadow: 0 0 1px 1px  rgb(62, 61, 115);
   border-top-right-radius: 5px;
   border: .9px solid rgb(52, 52, 69);
 }
+.containmentprder{
+  width: 275px; 
+  border-bottom: .5px solid rgb(45, 45, 61);
+  height: 50px;
+  left: 10px;
+  position: absolute;
+}
+.order1title{
+    position: absolute;
+    width:295px;
+    height: 420px;
+    top:295px;
+    left:10px;
+    color:#fffcfc;
+    font-size: 14;
+    font-family: 'Poppins', sans-serif;
+}
+
+.orderprice1{
+position: absolute;
+    width:295px;
+    height: 420px;
+    top:330px;
+    left:15px;
+    color:#fffcfc;
+    font-size: 14;
+    font-family: 'Poppins', sans-serif;
+    z-index: 3;
+}
+.discount1{
+position: absolute;
+    width:20px;
+    height: 420px;
+    top:332px;
+    left:60px;
+    color:#6D6B6B;
+    font-size: 12;
+    font-family: 'Poppins', sans-serif;
+    z-index: 3;
+}
+.discountline11{
+    top:326.5px;
+  width: 28px; 
+  border-bottom: 1.5px solid #838181;
+  height: 20px;
+  left: 60px;
+  position: absolute;
+  z-index: 4;
+}
+
 .order2{
     background-color: rgb(29, 28, 38);
     border-radius: 9px;
