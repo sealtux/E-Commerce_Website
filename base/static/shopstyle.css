@@ -1105,3 +1105,48 @@ height: 23px; /* or whatever size fits */
         background: linear-gradient(160deg, rgb(80, 55, 203), rgb(103, 83, 203));
     border: none;
 }
+
+#cartFrame {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  width: 250px; /* enough space for image + text */
+  max-height: 400px; /* limit height */
+  overflow-y: auto;  /* scroll when too many items */
+  
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* space between items */
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between image and text */
+  padding: 5px;
+  border-bottom: 1px solid #eee; /* divider line */
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover; /* keeps ratio, crops excess */
+  border-radius: 8px;
+  position: absolute;
+}
+
+.cart-item-details {
+  flex: 1;
+  font-size: 14px;
+}
+#cartFrame img {
+  width: 50px !important;
+  height: 50px !important;
+  object-fit: cover;
+  border-radius: 8px;
+}

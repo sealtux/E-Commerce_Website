@@ -66,7 +66,7 @@
             <div class = "circle2"><text id = "circle2msg">Good Support</text></div>
             <div class = "circle3"><text id = "circle3msg">Guaranteed</text></div>
           </div>
-
+          <div class="cart-items"></div>
           <div class = "containment3">
 
           </div>
@@ -255,16 +255,16 @@
         <div class = discountline11></div>  <!--this is for the design(the discount line)  -->
         </div>
 
-        <div class="order11" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)">
+          <div class="order11" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)">
         <img src="{% static 'products/console3.webp' %}" alt="Product Image" class="productimage1">
-        <button class="orderadd1" onclick="addToCart(this)" data-item-id="console3" onmouseenter="addpopup(this)" onmouseleave="addpodown(this)">Add</button>
-        <h1 class = "order1title">Transnovo VR Controller Grips </h1>
-        <div class = "containmentprder">  <!--this is for the design(the line)  -->
-        </div>
-        <h1 class = "orderprice1">₱249</h1>
-        <h1 class = "discount1">₱520</h1>
-        <div class = discountline11></div>  <!--this is for the design(the discount line)  -->
-        </div>
+        <button class="orderadd1" onclick="addToCart(this)" data-item-id="console3" 
+          onmouseenter="addpopup(this)" onmouseleave="addpodown(this)">Add</button>
+        <h1 class="order1title">Transnovo VR Controller Grips</h1>
+        <div class="containmentprder"></div>
+        <h1 class="orderprice1">₱249</h1>
+        <h1 class="discount1">₱520</h1>
+        <div class="discountline11"></div>
+      </div>
 
         <div class="order12" onmouseenter="popUp1(this)" onmouseleave="popDown1(this)">
         <img src="{% static 'products/console4.webp' %}" alt="Product Image" class="productimage1">
@@ -277,7 +277,12 @@
         <div class = discountline11></div>  <!--this is for the design(the discount line)  -->
         </div>
         
-        
+
+        <div class = "add_cart">
+          <div class ="cart_items">
+
+          </div>
+        </div>
 
 
 
@@ -298,6 +303,7 @@
 let isToggling = false;
 
 function toggleFrame() {
+
   if (isToggling) return;
 
   const frame = document.getElementById("cartFrame");
@@ -320,18 +326,19 @@ function toggleFrame() {
   frame.classList.toggle("visible");
 
 
-    // Resize the div
+    // Resize the upper frame 
   notice.classList.toggle("resized");
   panel.classList.toggle("resized");
-   // reposition
+
+   // reposition's the pos of the panel's content
   logofilter.classList.toggle("newpos");
   filtertext.classList.toggle("newpos");
   dropdown.classList.toggle("newpos");
+  dropdown.classList.add("no-hover");  //so that there is no interferance for the animation when being hovered on
 
-  dropdown.classList.add("no-hover");  //so that there is no interferance for the animation
 
 
-  // Apply transform via JS (more reliable than class toggling)
+  // This changes the position for when clicking the 
     if (!isVisible) {
     // Set transform and store base transform
     order.dataset.baseTransform = "translate(-1575px, 443px)";
@@ -343,7 +350,7 @@ function toggleFrame() {
     order3.dataset.baseTransform = "translate(-1260px, 443px)";
     order3.style.transform = `${order3.dataset.baseTransform} scaleY(1)`;
   } else {
-    // Reset using dataset
+    // Reset's the poisiot of the orders 
     order.dataset.baseTransform = "translate(0px, 0px)";
     order.style.transform = `${order.dataset.baseTransform} scaleY(1)`;
 
@@ -382,17 +389,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   buttons.forEach(button => {
     button.addEventListener("click", function () {
-      buttons.forEach(b => b.classList.remove("active"));
-      this.classList.add("active");
+      buttons.forEach(b => b.classList.remove("active")); // this removes all the active button ensuring that there is no active button
+      this.classList.add("active"); //sets active for the button that you click
     });
   });
 
   activateStoreButton(); // Set default active on first load
-});
+}); 
 
 // Handle back/forward navigation
 window.addEventListener("pageshow", function () {
-  activateStoreButton(); // Set store as active again
+  activateStoreButton(); // Set store as active again if your trying to back page
 });;
 
 
@@ -400,7 +407,7 @@ window.addEventListener("pageshow", function () {
 
 
              document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll(".buttonlay button");
+    const buttons = document.querySelectorAll(".buttonlay button"); // this gets all the buttons from the buttonlay class
 
     buttons.forEach(button => {
       button.addEventListener("click", function () {
@@ -468,6 +475,7 @@ document.addEventListener("click",function(event){
     });
 });
 
+
 function addToCart(button) {
     // Get item ID from the button's data attribute
     const itemId = button.getAttribute('data-item-id');
@@ -513,6 +521,40 @@ function getCookie(name) {
 
 
 
+const cartItemsContainer = document.querySelector(".cart-items");
+let cart = [];
+
+// Function to add an item to cart
+function addToCart(button) {
+  const productElement = button.closest(".order11"); // Get the product card
+
+  const item = {
+    id: button.getAttribute("data-item-id"),
+    name: productElement.querySelector(".order1title").textContent,
+    price: productElement.querySelector(".orderprice1").textContent,
+    img: productElement.querySelector("img").src
+  };
+
+  cart.push(item);
+  renderCart();
+}
+
+// Function to display cart items
+function renderCart() {
+  cartItemsContainer.innerHTML = "";
+  cart.forEach(item => {
+    const div = document.createElement("div");
+    div.classList.add("cart-item");
+    div.innerHTML = `
+  <img src="${item.img}" alt="${item.name}" class="cart-image">
+  <div class="cart-item-details">
+    <div class="cart-item-name">${item.name}</div>
+    <div class="cart-item-price">${item.price}</div>
+  </div>
+`;
+    cartItemsContainer.appendChild(div);
+  });
+}
 </script>
 
     </body>
