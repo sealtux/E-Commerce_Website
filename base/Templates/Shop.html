@@ -477,24 +477,34 @@ document.addEventListener("click",function(event){
 
 
 function addToCart(button) {
-    // Get item ID from the button's data attribute
-    const itemId = button.getAttribute('data-item-id');
+    // ===== Local cart handling =====
+    const productElement = button.closest(".order11"); // Get the product card
 
-    // Send it to your Django backend via POST
+    const item = {
+        id: button.getAttribute("data-item-id"),
+        name: productElement.querySelector(".order1title").textContent,
+        price: productElement.querySelector(".orderprice1").textContent,
+        img: productElement.querySelector("img").src
+    };
+
+    cart.push(item);
+    renderCart();
+
+    // ===== Send to backend =====
     fetch('/shop/', {
         method: 'POST',
         headers: {
             'X-CSRFToken': getCookie('csrftoken'),
             'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: `item_id=${encodeURIComponent(itemId)}`
+        body: `item_id=${encodeURIComponent(item.id)}`
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data.message || "Item added");
+        console.log(data.message || "Item added to backend");
     })
     .catch(error => {
-        console.error("Error adding item:", error);
+        console.error("Error adding item to backend:", error);
     });
 }
 
@@ -524,20 +534,7 @@ function getCookie(name) {
 const cartItemsContainer = document.querySelector(".cart-items");
 let cart = [];
 
-// Function to add an item to cart
-function addToCart(button) {
-  const productElement = button.closest(".order11"); // Get the product card
 
-  const item = {
-    id: button.getAttribute("data-item-id"),
-    name: productElement.querySelector(".order1title").textContent,
-    price: productElement.querySelector(".orderprice1").textContent,
-    img: productElement.querySelector("img").src
-  };
-
-  cart.push(item);
-  renderCart();
-}
 
 // Function to display cart items
 function renderCart() {
